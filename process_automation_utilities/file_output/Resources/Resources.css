@@ -1,0 +1,811 @@
+:root {
+    /* Updated CSS variables for colors, font families, and sizes to match the UO Ducks */
+    --header-color: #154733; /* UO Green color for all headings */
+    --background-color-header: #154733; /* UO Green background for the entire header */
+    --background-color-container: #F4ECE6; /* Eggshell background for containers for contrast */
+    --background-color-white: #F4ECE6; /* Eggshell background for contrast in headers and footer-container */
+    --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Keeping the same font family */
+    --box-shadow: 0 2px 5px rgba(91,75,138,0.2); /* Subtle shadow for depth, adjusted color for UO theme */
+    --border-radius: 8px; /* Keeping the same border radius */
+    --text-color: #333; /* Main text color, keeping the same */
+    --link-hover-color: #FEE123; /* Yellow on hover for links, adjusted for UO theme */
+    --dropdown-background: #F4F4F4; /* Light grey for dropdown, for a neutral look */
+    --dropdown-hover-background: #EDEDED; /* Slightly darker grey on hover for dropdown, for a subtle contrast */
+    
+    /* Colors for dark mode */
+    --dark-background-color: #121212;
+    --dark-header-footer-color: #1c1c1c;
+    --dark-container-color: #1e1e1e;
+    --dark-text-color: #b3b3b3;
+    --dark-highlight-color: #ffcc80;
+    --dark-box-shadow: 0 0 10px rgba(255,184,108,0.1);
+    --dark-border-color: rgba(255,184,108,0.25);
+    --dark-link-color: #ff8a80;
+    --dark-link-hover-color: #262626;
+    --dark-link-hover-text-color: #8b0000;
+
+    /* Chatbot */
+    --icon-size: 80px; /* This is the base size, adjust as needed */
+
+}
+
+/* Main body style */
+body {
+    font-family: var(--font-family);
+    background-color: #F4ECE6; /* Eggshell-like background color */
+    color: var(--text-color);
+    text-align: center;
+    padding: 5px;
+    margin: 0; /* Remove default margin */
+}
+
+/* Full width for header, main, and footer */
+header, main, footer {
+    width: 100%;
+}
+
+/* Unified header styling */
+header {
+    background-color: var(--background-color-header); /* Light purple background for the entire header */
+    padding: 10px 0; /* Padding around the header */
+    border-radius: 5px;
+
+}
+
+header.li {
+    justify-content: center; /* Center the logo horizontally if needed */
+
+}
+
+.logo-container {
+    background-color: var(--background-color-header); /* Same as the navigation background */
+    border-right: 2px solid var(--header-color); /* This creates the right border with the desired color */
+    padding: 10px; /* Adjust the padding to center your logo appropriately */
+    display: flex; /* Use flexbox for alignment */
+    align-items: center; /* Center the logo vertically */
+    border-radius: 5px;
+
+    justify-content: center; /* Center the logo horizontally if needed */
+}
+
+.logo-container img {
+    max-width: 150px; /* Replace with the maximum width you want */
+    max-height: 150px; /* Replace with the maximum height you want */
+    height: auto; /* This ensures that the aspect ratio is maintained */
+}
+
+.header-container {
+    width: 65%; /* Adjust width as needed */
+    margin: 0 auto; /* Center the header content */
+    display: flex; /* Use flexbox to align items */
+    justify-content: space-between; /* Space between title and navigation */
+    align-items: center; /* Vertically align items */
+    border-radius: 5px;
+    text-align: left; /* Align content to the left */
+}
+
+/* Container style */
+.container {
+    background-color: var(--background-color-container); /* Light purple background for container */
+    margin: 20px auto; /* Consistent vertical margin */
+    width: 80%; /* Adjust width as needed */
+    padding: 20px;
+    box-shadow: var(--box-shadow); /* Soft shadow for depth */
+    text-align: left; /* Content aligned left */
+}
+
+/* Base Header Styling */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-family);
+    color: var(--header-color);
+    margin: 1rem 0;
+    padding-left: 20px;
+    font-weight: bold;
+}
+
+p {
+    font-size: 1.25em;
+    text-align: left; /* Align left instead of center */
+    margin-left: calc((100% - 65%) / 2); /* Adjust this value to match the header-container alignment */
+}
+/* Individual Header Customizations */
+h1 {
+    text-align: center; /* Center-align only for h1 */
+    font-size: 2em; /* Adjust font size as needed */
+}
+
+h2 {
+    font-size: 1.75em;
+    text-align: left; /* Align left instead of center */
+    margin-left: calc((100% - 80%) / 2); /* Adjust this value to match the header-container alignment */
+}
+
+h3, h4, h5, h6 {
+    background-color: var(--background-color-white); /* White background for contrast */
+    padding: 20px; /* Padding inside each heading */
+    box-shadow: var(--box-shadow); /* Subtle shadow for depth */
+    border-radius: var(--border-radius); /* Rounded corners for a softer look */
+    text-align: left; /* Align left instead of center */
+    margin-left: calc((100% - 75%) / 2); /* Adjust this value to match the header-container alignment */
+    font-size: 1.15em; /* Adjust font size as needed */
+}
+
+/* Adjust font size for smaller headers, if needed */
+h4 { font-size: 1.25em; }
+h5 { font-size: 1.125em; }
+h6 { font-size: 1em; }
+
+/* Navigation styles */
+nav {
+    margin: 0 auto; /* Align center */
+    padding: 10px 0; /* Vertical padding for nav items */
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    position: relative;
+    lex-grow: 1; /* Allows the nav to take up the remaining space */
+    margin: 0; /* Remove default margin */
+    display: flex;
+    justify-content: center; /* Center nav items */
+    align-items: left; /* Vertically align nav items */
+}
+
+nav li {
+    padding: 0 20px; /* Horizontal padding for nav items */
+}
+
+/* Link and button styling for navigation */
+nav a, 
+nav .dropbtn, 
+#dark-mode-toggle { /* Add button ID here */
+    color: var(--header-color);
+    text-decoration: none;
+    display: block;
+    padding: 10px 15px; /* Adjust padding to match other nav items */
+    background: none; /* Remove default button background */
+    border: none; /* Remove default button border */
+    font-family: inherit; /* Inherit font from parent */
+    font-size: 20px; /* Inherit font size from parent */
+    cursor: pointer; /* Change cursor to pointer */
+}
+
+/* Hover effects for links and buttons */
+nav a:hover, 
+.navbar .dropdown:hover .dropbtn,
+#dark-mode-toggle:hover { /* Add button ID here */
+    background-color: var(--link-hover-color); /* Darker purple on hover */
+}
+
+/* Dropdown Content styles */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--dropdown-background); /* Light purple */
+    z-index: 1;
+    min-width: 160px; /* Ensure the dropdown has a minimum width */
+    border-radius: 50% 20% / 10% 40%;    overflow: hidden; /* Ensures sub-elements adhere to border radius */
+}
+
+.dropdown-content a {
+    color: var(--text-color);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block; /* Full width clickable area */
+    transition: background-color 0.3s ease; /* Smooth transition for hover */
+}
+
+.dropdown-content a:hover {
+    background-color: var(--dropdown-hover-background); /* Light purple on hover */
+}
+
+.dropdown:hover .dropdown-content {
+    display: block; /* Display dropdown on hover */
+}
+
+/* Existing Footer styles */
+.footer {
+    background-color: #004F39; /* Keep the light purple background */
+    padding: 10px 0; /* Adjust padding as needed */
+    text-align: center;
+}
+
+.welcome-banner {
+    overflow: hidden; /* Hide the overflowed content */
+    white-space: nowrap; /* Keep the ticker text in a single line */
+    box-sizing: border-box;
+    padding: 10px 0; /* Add some vertical padding */
+    background-color: rgba(254, 225, 35, 0.6); /* Background color for the ticker area with 10% opacity */
+}
+
+.welcome-banner h1 {
+    display: inline-block; /* Display inline-block so they can be animated side by side */
+    margin: 0 50px; /* Add space between messages */
+    animation: scroll-left 20s linear infinite; /* Apply the animation */
+}
+
+.welcome-banner:hover h1 {
+    animation-play-state: paused; /* Pause the animation when hovering */
+}
+
+/* Keyframes for the scrolling animation */
+@keyframes scroll-left {
+    0% {
+        transform: translateX(100%); /* Start from the right */
+    }
+    100% {
+        transform: translateX(-100%); /* End at the left */
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .welcome-banner h1 {
+        animation: none; /* Disable animation for users who prefer reduced motion */
+    }
+}
+
+/* Base styles for larger screens */
+.gallery {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding-bottom: 10px;
+    gap: 10px; /* Adjust the space between frames as needed */
+}
+
+.image-frame {
+    background-color: #154733; /* This is a bright green; adjust the color as needed */
+    padding: 10px; /* This creates space around the image, acting as a "frame" */
+    width: calc(25% - 20px); /* Adjust the width to account for padding and gap */
+    box-sizing: border-box;
+    border-radius: 5px;
+
+    transition: opacity 1s ease; /* Smooth transition for the fade effect */
+}
+
+.image-frame img {
+    width: 100%;
+    height: auto;
+
+    display: block; /* This removes any extra space beneath the image */
+    transition: opacity 3s ease-in-out; /* Adjust time as necessary for the desired fade duration */
+
+}
+
+.gallery-flex-container {
+    display: flex;
+    justify-content: space-around; /* Distributes space evenly between and around items */
+    align-items: center;
+}
+
+.gallery-image {
+    flex: 0 0 calc(100% / 6); /* Six images in a row */
+    height: 200px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto; /* Center images if they are smaller than the flex container */
+}
+
+.image-container {
+    background-color: var(--background-color-header); /* Use the same background color as the logo container */
+    border-right: 2px solid var(--header-color); /* Apply the same border style */
+    padding: 10px; /* Adjust padding to suit the image sizes */
+    display: flex; /* Use flexbox for alignment */
+    align-items: center; /* Center the content vertically */
+    justify-content: center; /* Center the content horizontally */
+}
+
+.image-container img {
+    max-width: 150px; /* Adjust the maximum width as needed */
+    max-height: 150px; /* Adjust the maximum height as needed */
+    height: auto; /* Maintain the aspect ratio */
+    width: auto; /* Add this to maintain the aspect ratio */
+}
+
+
+/* You can define additional classes for different fade durations */
+.fade-in {
+    opacity: 1;
+}
+
+/* Footer container styles, assuming 3 columns */
+.footer-container {
+    background-color: #F4ECE6; /* White background */
+    width: 80%;
+    margin: 0 auto; /* Center the footer content */
+    display: flex;
+    justify-content: space-between; /* Distributes space evenly between columns */
+    align-items: flex-start; /* Aligns items to the start of the flex container */
+    padding: 20px;
+    box-sizing: border-box; /* Includes padding and border in the element's total width and height */
+    flex-wrap: wrap; /* Allows the container to wrap columns on smaller screens */
+    margin: 20px auto; /* Consistent vertical margin */
+    width: 80%; /* Adjust width as needed */
+    padding: 20px;
+    box-shadow: var(--box-shadow); /* Soft shadow for depth */
+    text-align: left; /* Content aligned left */
+    border-radius: 5px;
+}
+
+.footer {
+    border-radius: 5px;
+
+}
+
+/* Footer column styles, assuming 3 columns */
+.footer .footer-col {
+    flex: 1; /* Gives each column an equal amount of space */
+    padding: 0 15px; /* Adds padding inside each column */
+    box-sizing: border-box; /* Includes padding in the column width calculation */
+    margin-bottom: 20px; /* Adds space below the column for wrapped content */
+}
+
+/* Social media styles to center underneath the third column */
+.footer .footer-col.social-media-col {
+    flex-basis: 100%; /* Forces the social media column to take the full width */
+    order: 3; /* Positions the social media column below the third column content */
+    padding-top: 20px; /* Adds space above the social media links */
+}
+
+/* Social media list styles */
+.social-media {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto; /* Centers the list in the available space */
+    display: flex;
+    justify-content: center; /* Centers the items horizontally */
+    align-items: center; /* Centers the items vertically */
+    flex-wrap: wrap; /* Allows items to wrap as needed */
+}
+
+/* Social media list item styles */
+.social-media li {
+    margin: 0 10px; /* Adds horizontal spacing between icons */
+}
+
+/* Social media icon styles */
+.social-media .social-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers the items horizontally */
+    text-align: center; /* Centers the text */
+}
+
+/* Social media image styles */
+.social-media .social-icon img {
+    width: 30px; /* Width of the icons */
+    height: 30px; /* Height of the icons */
+}
+
+/* Text under social media icons */
+.social-media .social-icon span {
+    margin-top: 8px; /* Space between icon and text */
+    font-size: 0.75em; /* Size of the text */
+    color: var(--text-color); /* Text color, using CSS variable for consistency */
+    display: block; /* Ensures the text is displayed as a block element */
+}
+
+/* Custom Text Animation with 30 Colors in a Linear Pattern */
+@keyframes custom-text-animation {
+  0% { color: red; }
+  3.33% { color: orange; }
+  6.67% { color: yellow; }
+  10% { color: green; }
+  13.33% { color: blue; }
+  16.67% { color: purple; }
+  20% { color: pink; }
+  23.33% { color: teal; }
+  26.67% { color: indigo; }
+  30% { color: violet; }
+  33.33% { color: gold; }
+  36.67% { color: coral; }
+  40% { color: lime; }
+  43.33% { color: cyan; }
+  46.67% { color: lavender; }
+  50% { color: magenta; }
+  53.33% { color: olive; }
+  56.67% { color: turquoise; }
+  60% { color: maroon; }
+  63.33% { color: navy; }
+  66.67% { color: chocolate; }
+  70% { color: steelblue; }
+  73.33% { color: peru; }
+  76.67% { color: sienna; }
+  80% { color: slategray; }
+  83.33% { color: forestgreen; }
+  86.67% { color: royalblue; }
+  90% { color: firebrick; }
+  93.33% { color: darkorchid; }
+  96.67% { color: goldenrod; }
+  100% { color: red; }
+}
+
+
+/* Applies to links within the body and footer only */
+body a:not(header a), footer a {
+  animation: custom-text-animation 200s linear infinite;
+}
+
+/* Ensures the animation runs smoothly */
+body a:not(header a), footer a {
+  animation-timing-function: linear;
+}
+
+/* Stop rainbow animation on text below social icons */
+.footer .social-icon span {
+  animation: none;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #121212; /* Very dark grey for the body */
+    color: #b3b3b3; /* Lighter grey for body text, softer than headers */
+}
+
+body.dark-mode header,
+body.dark-mode .footer {
+    background-color: #1c1c1c; /* Slightly lighter dark shade for header/footer */
+    color: #ffcc80; /* Bright text for headers for higher contrast */
+}
+
+body.dark-mode .header-container,
+body.dark-mode .footer-container {
+    background-color: #242424; /* Slightly lighter shade for inner containers */
+    box-shadow: 0 0 15px rgba(255,184,108,0.2); /* Soft glow with a deep red color for warmth */
+}
+
+body.dark-mode .container,
+body.dark-mode main section,
+body.dark-mode main .container,
+body.dark-mode main li {
+    background-color: #1e1e1e; /* Dark grey for containers */
+    color: #b3b3b3; /* Slightly lighter than the body text for subtle differentiation */
+    box-shadow: 0 0 10px rgba(255,184,108,0.1); /* Soft glow with a warm orange color for ambiance */
+    border: 1px solid rgba(255,184,108,0.25); /* Subtle edge highlight with warm orange */
+}
+
+/* Apply dark mode styles to headers h3 to h6 */
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5,
+body.dark-mode h6 {
+    background-color: #1e1e1e; /* Dark grey for header containers */
+    color: #b3b3b3; /* Lighter grey for header text, softer than body text */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3); /* Slightly darker shadow for depth in dark mode */
+    border: 1px solid rgba(255,184,108,0.25); /* Subtle edge highlight with warm orange */
+}
+
+body.dark-mode h1,
+body.dark-mode main h2 {
+    color: #cd5c5c; /* Slightly lighter red for large headings for contrast and visibility */
+}
+
+body.dark-mode p {
+    color: #cd5c5c; /* Dark mode color for paragraph */
+}
+
+body.dark-mode main a {
+    color: #ff8a80; /* A softer red for links, less bright than headings */
+}
+
+body.dark-mode nav a,
+body.dark-mode .dropbtn {
+    color: #b3b3b3; /* Bright text for navigation for clarity */
+}
+
+body.dark-mode nav a:hover,
+body.dark-mode .dropdown:hover .dropbtn {
+    background-color: #262626; /* Dark shade on hover for a subtle interaction feedback */
+    color: #8b0000; /* Deep royal red text on hover for consistency with the theme */
+}
+
+body.dark-mode .dropdown-content {
+    background-color: #242424; /* Dark shade for dropdowns for a sleek look */
+}
+
+body.dark-mode .dropdown-content a {
+    color: #b3b3b3; /* Grey for dropdown links, matching the body text for uniformity */
+}
+
+body.dark-mode .dropdown-content a:hover {
+    background-color: #1e1e1e; /* Darker shade for dropdown link hover */
+    color: #ff8a80; /* Softer red for highlighting selection without harshness */
+}
+
+
+/* Dark Mode Styles for social media captions */
+body.dark-mode .social-media .social-icon span {
+    color: #ff9999; /* Pink color for better readability */
+}
+
+/* Dark Mode Styles for social media icons */
+body.dark-mode .social-media .social-icon img[src*='linkedin'] {
+    content: url('../images/social_logos/linkedin_light.png'); /* Update the path to the light icon */
+}
+
+body.dark-mode .social-media .social-icon img[src*='instagram'] {
+    content: url('../images/social_logos/instagram_light.png'); /* Update the path to the light icon */
+}
+
+body.dark-mode .social-media .social-icon img[src*='engage'] {
+    content: url('../images/social_logos/engage_light.png'); /* Update the path to the light icon */
+}
+
+body.dark-mode .social-media .social-icon img[src*='discord'] {
+    content: url('../images/social_logos/discord_light.png'); /* Update the path to the light icon */
+}
+
+/* Specific styles for links in dark mode */
+body.dark-mode a:not(header a), body.dark-mode footer a {
+  color: #ff9999; /* Light salmon pink color */
+}
+
+body.dark-mode .logo-container {
+    background-color: #242424; /* Dark grey, adjust as needed */
+    border-right: 2px solid #ffcc80; /* Bright color for the border for contrast */
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    justify-content: center;
+}
+
+body.dark-mode .logo-container img {
+    /* If your logo isn't visible against a dark background, consider using an inverted or lighter version of the logo. */
+    content: url('../images/logo_light.png'); /* Update the path to the light version of the logo */
+    max-width: 150px;
+    max-height: 150px;
+    height: auto;
+}
+
+
+/* Adaptive styles for smaller screens */
+@media screen and (max-width: 1264px) {
+    .header-container, .footer-container {
+        flex-direction: column;
+        text-align: left;
+    }
+
+    .header-titles h1, .header-titles h2, nav ul {
+        margin-top: 10px;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav li {
+        padding: 10px 0;
+    }
+}
+    .gallery-image {
+        flex: 0 0 calc(100% / 3); /* Three images in a row for medium screens */
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .gallery-image {
+        flex: 0 0 calc(100% / 2); /* Two images in a row for small screens */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .gallery-image {
+        flex: 0 0 100%; /* One image per row for extra small screens */
+        height: auto; /* Adjust height to maintain aspect ratio */
+
+
+    }
+}
+/* Adaptive styles for smaller screens */
+@media screen and (max-width: 1264px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center; /* Ensure footer items are centered */
+    }
+
+    .footer-col {
+        width: 100%; /* Full width for column layout */
+        margin-top: 10px; /* Add some space between footer items */
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .footer-container {
+        flex-direction: row; /* Switch to row direction for medium screens */
+        flex-wrap: wrap;
+        justify-content: center; /* Center the items */
+    }
+
+    .footer-col {
+        flex: 0 0 calc(50% - 10px); /* Two items per row with a small gap */
+        max-width: calc(50% - 10px); /* Max width to match flex-basis */
+        margin-top: 10px; /* Maintain vertical spacing */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .footer-container {
+        justify-content: flex-start; /* Aligns child items to the start of the container's main axis */
+    }
+    .footer-col {
+        flex: 0 0 100%; /* Full width for a single column layout on small screens */
+        max-width: 100%; /* Max width to match flex-basis */
+        margin-top: 10px; /* Maintain vertical spacing */
+        text-align: left; /* Align the text inside the footer column to the left */
+        padding-left: 0; /* Adjust or remove padding as necessary */
+    }
+}
+
+
+/* Adaptive styles for screens under 480px */
+@media screen and (max-width: 480px) {
+    main h4, 
+    main h3,
+    main h2, 
+
+    main p {
+        text-align: left !important;
+        padding-left: 0 !important;
+        margin-left: 0 !important;
+    }
+
+    /* For sections that have a different alignment or padding, reset them specifically */
+
+    .membership-info h2,
+    .sponsors h2,
+    .faq h2,{
+        text-align: left !important;
+        padding-left: 0 !important;
+        margin-left: 0 !important;
+    }
+
+    /* If you are using flex or grid for layout, make sure they align to the start */
+    main section {
+        align-items: flex-start !important;
+    }
+}
+
+
+
+#chatbot {
+    display: none; /* Initially hidden */
+    position: fixed;
+    bottom: 60px; /* Adjust as needed */
+    right: 20px;
+    width: 300px; /* Adjust as needed */
+    height: 400px; /* Adjust as needed */
+    border: 1px solid #ddd;
+    background-color: white;
+    z-index: 1000;
+    /* Add more styling as required */
+}
+
+#chatbox {
+    flex-grow: 1;
+    padding: 10px;
+    overflow-y: auto;
+}
+
+#chatForm {
+    display: flex;
+    padding: 10px;
+}
+
+#userInput {
+    flex-grow: 1;
+    padding: 5px;
+}
+
+#chatForm button {
+    padding: 5px 10px;
+}
+
+.floating-icon {
+    position: fixed; /* Fixed to stay in place during scrolling */
+    bottom: 20px; /* Distance from bottom */
+    right: 20px; /* Distance from right - adjust this if the icon is too far to the right */
+    cursor: pointer;
+    z-index: 1001; /* Ensure it's above the chatbot container */
+}
+
+/* Additional styles for the icon image, if necessary */
+.floating-icon img {
+    width: var(--icon-size);
+    height: auto;  /* Maintain aspect ratio */
+    transition: width 0.3s ease;  /* Smooth transition for size changes */
+}
+
+/* Style for the notification '!' */
+.notification {
+    position: absolute;
+    top: 10%; /* Adjust as needed */
+    right: 10%; /* Adjust as needed */
+    width: 20px; /* Adjust size as needed */
+    height: 20px; /* Adjust size as needed */
+    line-height: 20px; /* For vertical centering */
+    background-color: red;
+    border-radius: 50%;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    font-size: 14px; /* Adjust font size as needed */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Style for the message bubble */
+.message-bubble {
+    position: absolute; /* Position relative to the floating-icon */
+    bottom: 120%; /* Position above the icon, with some space for the 'tail' */
+    right: 50%;
+    transform: translateX(50%); /* Center align the bubble */
+    background: #f9f9f9; /* Light grey background */
+    background-image: linear-gradient(to right top, #ffffff, #f1f1f1); /* Subtle gradient */
+    border: 1px solid #ccc; /* Light grey border */
+    border-radius: 15px; /* Rounded corners */
+    padding: 10px 15px;
+    font-size: 14px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    display: none; /* Initially hidden */
+    font-family: 'Arial', sans-serif; /* Fallback font */
+    animation: fadeInUp 0.3s ease-out;
+    z-index: 1002; /* Ensure it's above other content */
+}
+
+/* Triangle tip for the message bubble */
+.message-bubble:after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    right: 50%;
+    transform: translateX(50%);
+    border-width: 10px;
+    border-style: solid;
+    border-color: #f9f9f9 transparent transparent transparent;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+/* Keyframes for the bubble animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateX(50%) translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(50%) translateY(0);
+    }
+}
+
+
+.chat-container {
+    display: none; /* Initially hidden */
+    position: fixed; /* Fixed position to stay in the viewport */
+    bottom: 60px; /* Distance from bottom */
+    right: 20px; /* Distance from right */
+    width: 300px; /* Container width */
+    height: 400px; /* Container height */
+    border: 1px solid rgba(0, 0, 0, 0.2); /* Softer border color */
+    background-color: white;
+    border-radius: 8px; /* Rounded corners for modern look */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    overflow: hidden; /* Ensures nothing spills out of the container */
+    z-index: 1000; /* High z-index to ensure it's above other content */
+    transition: all 0.3s ease-in-out; /* Smooth transition for chat container */
+}
+
+/* Triangle tip for the message bubble, positioned to look connected to the chat container */
+.message-bubble:after {
+    content: '';
+    position: absolute;
+    bottom: -10px; /* Position just below the message bubble */
+    right: 20px; /* Align with the right side of the message bubble */
+    border-width: 10px; /* Larger border width for a bigger triangle */
+    border-style: solid;
+    border-color: transparent transparent #fff #fff; /* Match the chat container background */
+    box-shadow: -2px 2px 2px rgba(0, 0, 0, 0.1); /* Shadow to the left and bottom of the triangle */
+    transform: translateX(-50%) rotate(45deg); /* Rotate the square to form a triangle */
+}
