@@ -1,5 +1,5 @@
 
-University of Oregon AI Student Association Website Readme
+Readme- University of Oregon AI Student Association Website
 ==========================================================
 
 Introduction
