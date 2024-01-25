@@ -3,9 +3,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         // Apply dark mode styles
         document.body.classList.add('dark-mode');
     }
-    
-    // Your existing code...
-    
+        
     // Notification click event listener
     var notification = document.getElementById('notification');
     if(notification) {
@@ -13,8 +11,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
             this.style.display = 'none';
         });
     }
-
-    // Rest of your code...
 });
 
 
