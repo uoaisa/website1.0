@@ -35,7 +35,3 @@ The JavaScript file adds dynamic features to the website:
 1. Dark Mode Toggle: Allows users to switch between light and dark themes.
 2. Chatbot: An interactive chatbot for user engagement and support.
 3. Image Gallery: A dynamic image gallery that updates periodically.
-
-Conclusion
-----------
-The website for the University of Oregon AI Student Association is designed to be informative, visually appealing, and user-friendly. Ongoing updates and improvements will ensure the website continues to serve as a valuable resource for students interested in AI and Machine Learning.
