@@ -877,17 +877,6 @@ body.dark-mode .logo-container img {
     background-color: #ddd;
 }
 
-/* Responsive adjustments for chatbot */
-@media (max-width: 600px) {
-    .chat-container {
-        width: 90%;
-        right: 5%;
-        bottom: 20px;
-    }
-
-    .chat-message {
-        max-width: 75%;
-
 /* Adaptive styles for smaller screens */
 @media screen and (max-width: 1264px) {
     .header-container,
@@ -1088,3 +1077,4 @@ body.dark-mode .logo-container img {
 
     /* Additional mobile-specific styles can be added here */
 }
+
