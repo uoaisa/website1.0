@@ -56,9 +56,12 @@
 
     <!-- Main Content -->
     <main>
-    <section class="welcome-banner" style="background-image: url('path-to-your-background-image.jpg');">
+    <section class="welcome-banner">
+        <h1>Join us on Monday, January 29th @ 6:00 PM in Lillis 255!</h1>
         <h1>Welcome to the University of Oregon Artificial Intelligence & Machine Learning Student Association!</h1>
         <h1>Discover, learn, and innovate with us in the field of Artificial Intelligence.</h1>
+    </section>
+    </section>
         <a href="#main-content" class="scroll-down">Learn More</a>
     </section>
         <div class="container">
@@ -103,13 +106,19 @@
         </div>
         </section>
     <div id="chatbotIcon" class="floating-icon">
-        <img src="../images/chat_bot_icons/robot.png" alt="Chat Icon">
+        <img src="pages/images/chat_bot_icons/robot.png" alt="Chat Icon">
         <div class="notification">!</div>
-        <div class="message-bubble">New message</div>
     </div>
+
+
     <div id="chatbot">
         <div id="chatbox">
             <!-- Messages will be displayed here -->
+            <!-- Typing Indicator will be displayed here -->
+        </div>
+        <!-- Quick replies will go here -->
+        <div id="quickReplies">
+            <!-- Quick replies buttons added dynamically by JavaScript -->
         </div>
         <form id="chatForm">
             <input type="text" id="userInput" placeholder="Type a message...">
