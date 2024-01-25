@@ -625,7 +625,33 @@ body.dark-mode .logo-container {
     border-radius: 5px;
     justify-content: center;
 }
+body.dark-mode .welcome-banner {
+    overflow: hidden;
+    white-space: nowrap;
+    box-sizing: border-box;
+    padding: 10px 0;
+    background-color: rgba(0, 0, 0, 0.8); /* Dark background color */
+    color: white; /* Text color in dark mode */
+}
 
+body.dark-mode .welcome-banner h1 {
+    display: inline-block;
+    margin: 0 50px;
+    animation: scroll-left 45s linear infinite;
+}
+
+body.dark-mode .welcome-banner:hover h1 {
+    animation-play-state: paused;
+}
+
+@keyframes scroll-left {
+    0% {
+        transform: translateX(100%); /* Start off-screen to the right */
+    }
+    100% {
+        transform: translateX(-100%); /* Move to the left */
+    }
+}
 body.dark-mode .logo-container img {
     /* If your logo isn't visible against a dark background, consider using an inverted or lighter version of the logo. */
     max-width: 150px;
